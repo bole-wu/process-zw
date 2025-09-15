@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流程图坐标测试</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .test-container {
+            width: 1700px;
+            height: 500px;
+            border: 2px solid #333;
+            background: white;
+            position: relative;
+            overflow: auto;
+        }
+        
+        .test-svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .node {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .start-end {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .process {
+            width: 90px;
+            height: 50px;
+            background: #2196F3;
+            color: white;
+        }
+        
+        .completed {
+            background: #4CAF50;
+        }
+        
+        .active {
+            background: #FF9800;
+        }
+        
+        .pending {
+            background: #9E9E9E;
+        }
+    </style>
+</head>
+<body>
+    <h2>流程图坐标系统测试</h2>
+    <p>验证节点是否正确分布在指定坐标位置</p>
+    
+    <div class="test-container">
+        <svg class="test-svg" viewBox="0 0 1700 500">
+            <!-- 连接线 -->
+            <line x1="210" y1="250" x2="340" y2="250" stroke="#333" stroke-width="2"/>
+            <line x1="440" y1="250" x2="540" y2="250" stroke="#333" stroke-width="2"/>
+            <line x1="640" y1="250" x2="740" y2="150" stroke="#333" stroke-width="2"/>
+            <line x1="640" y1="250" x2="740" y2="350" stroke="#333" stroke-width="2"/>
+            <line x1="840" y1="150" x2="940" y2="100" stroke="#333" stroke-width="2"/>
+            <line x1="840" y1="150" x2="940" y2="200" stroke="#333" stroke-width="2"/>
+            <line x1="840" y1="150" x2="940" y2="300" stroke="#333" stroke-width="2"/>
+            <line x1="840" y1="350" x2="940" y2="100" stroke="#333" stroke-width="2"/>
+            <line x1="1040" y1="100" x2="1140" y2="150" stroke="#333" stroke-width="2"/>
+            <line x1="1040" y1="200" x2="1140" y2="150" stroke="#333" stroke-width="2"/>
+            <line x1="1040" y1="300" x2="1140" y2="300" stroke="#333" stroke-width="2"/>
+            <line x1="1240" y1="150" x2="1340" y2="200" stroke="#333" stroke-width="2"/>
+            <line x1="1240" y1="300" x2="1340" y2="200" stroke="#333" stroke-width="2"/>
+            <line x1="1440" y1="200" x2="1540" y2="250" stroke="#333" stroke-width="2"/>
+            <line x1="1040" y1="100" x2="640" y2="400" stroke="#333" stroke-width="2"/>
+            <line x1="1040" y1="200" x2="640" y2="400" stroke="#333" stroke-width="2"/>
+            <line x1="640" y1="400" x2="440" y2="400" stroke="#333" stroke-width="2"/>
+            <line x1="440" y1="400" x2="1540" y2="250" stroke="#333" stroke-width="2"/>
+            <line x1="1040" y1="300" x2="1340" y2="100" stroke="#333" stroke-width="2"/>
+            <line x1="1340" y1="100" x2="1340" y2="200" stroke="#333" stroke-width="2"/>
+            <line x1="1340" y1="100" x2="1540" y2="250" stroke="#333" stroke-width="2"/>
+        </svg>
+        
+        <!-- 节点 -->
+        <div class="node start-end completed" style="left: 120px; top: 220px;">项目启动<br>🚀</div>
+        <div class="node process completed" style="left: 305px; top: 225px;">需求调研<br>📊</div>
+        <div class="node process active" style="left: 505px; top: 225px;">项目规划<br>📋</div>
+        
+        <div class="node process pending" style="left: 705px; top: 125px;">架构设计<br>🏗️</div>
+        <div class="node process pending" style="left: 705px; top: 325px;">UI设计<br>🎨</div>
+        
+        <div class="node process pending" style="left: 905px; top: 75px;">前端开发<br>💻</div>
+        <div class="node process pending" style="left: 905px; top: 175px;">后端开发<br>⚙️</div>
+        <div class="node process pending" style="left: 905px; top: 275px;">数据库设计<br>🗄️</div>
+        
+        <div class="node process pending" style="left: 1105px; top: 125px;">接口联调<br>🔗</div>
+        <div class="node process pending" style="left: 1105px; top: 275px;">测试验证<br>🔍</div>
+        
+        <div class="node process pending" style="left: 1305px; top: 175px;">预发布环境<br>📦</div>
+        <div class="node start-end pending" style="left: 1520px; top: 220px;">生产部署<br>🌟</div>
+        
+        <div class="node process pending" style="left: 505px; top: 375px;">代码审查<br>👀</div>
+        <div class="node process pending" style="left: 305px; top: 375px;">文档编写<br>📚</div>
+        <div class="node process pending" style="left: 1305px; top: 75px;">部署配置<br>⚙️</div>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <h3>坐标验证：</h3>
+        <ul>
+            <li>项目启动: (150, 250) - 实际位置: (120, 220)</li>
+            <li>需求调研: (350, 250) - 实际位置: (305, 225)</li>
+            <li>项目规划: (550, 250) - 实际位置: (505, 225)</li>
+            <li>架构设计: (750, 150) - 实际位置: (705, 125)</li>
+            <li>所有节点应均匀分布，无重叠</li>
+        </ul>
+    </div>
+</body>
+</html>
