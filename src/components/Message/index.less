@@ -1,0 +1,433 @@
+/* 消息发送组件样式 */
+.message-container {
+  width: 500px;
+  background-color: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow: hidden;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #e6f7ff;
+  border-bottom: 1px solid #d9d9d9;
+
+  h3 {
+    margin: 0;
+    color: #1890ff;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .close-btn {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #1890ff;
+    }
+  }
+}
+
+.message-body {
+  padding: 16px;
+}
+
+.message-type-selection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #333;
+
+  input[type="radio"] {
+    margin-right: 6px;
+    cursor: pointer;
+  }
+}
+
+.priority-selection,
+.color-selection {
+  display: flex;
+  align-items: center;
+  color: #333;
+
+  label {
+    margin-right: 8px;
+  }
+}
+
+select {
+  padding: 4px 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: #40a9ff;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  }
+}
+
+.color-picker {
+  width: 30px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+
+  &:hover {
+    border-color: #40a9ff;
+  }
+}
+
+/* 改进的表单组布局 */
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* 改进的标签样式 */
+.form-label {
+  display: inline-block;
+  width: 70px;
+  text-align: right;
+  margin-right: 12px;
+  margin-top: 6px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 改进的输入框样式 */
+.form-input {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s;
+  min-width: 0;
+
+  &:hover {
+    border-color: #40a9ff;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  }
+}
+
+/* 改进的文本域样式 */
+.form-textarea {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  resize: vertical;
+  font-family: inherit;
+  transition: all 0.3s;
+  min-height: 80px;
+  min-width: 0;
+
+  &:hover {
+    border-color: #40a9ff;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  }
+}
+
+/* 附件按钮样式 - 与表单标签对齐 */
+.attachment-btn {
+  width: 70px;
+  padding: 6px 8px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-right: 12px;
+  text-align: center;
+  min-width: auto;
+}
+
+/* 附件输入框样式调整 - 支持文本域 */
+.attachment-input {
+  flex: 1;
+  background-color: #f9f9f9;
+  cursor: default;
+  min-height: 60px;
+}
+
+/* 确保附件文本域样式正确 */
+.form-textarea.attachment-input {
+  min-height: 60px;
+  resize: vertical;
+}
+
+/* 确保附件按钮与文本域对齐 */
+.attachment-btn {
+  width: 70px;
+  padding: 6px 8px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-right: 12px;
+  text-align: center;
+  min-width: auto;
+  height: fit-content;
+  margin-top: 0;
+}
+
+/* 表单组布局 - 确保附件区域正确排列 */
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* 确保标签与按钮对齐 */
+.form-label,
+.attachment-btn {
+  margin-top: 6px;
+}
+
+.message-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 16px;
+  background-color: #fafafa;
+  border-top: 1px solid #d9d9d9;
+  gap: 8px;
+}
+
+.send-btn,
+.cancel-btn {
+  padding: 8px 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+  min-width: 80px;
+}
+
+.send-btn {
+  background-color: #1890ff;
+  color: white;
+  border-color: #1890ff;
+
+  &:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+  }
+
+  &:active {
+    background-color: #096dd9;
+    border-color: #096dd9;
+  }
+}
+
+.cancel-btn {
+  background-color: white;
+  color: #333;
+
+  &:hover {
+    color: #1890ff;
+    border-color: #40a9ff;
+  }
+
+  &:active {
+    color: #096dd9;
+    border-color: #096dd9;
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 520px) {
+  .message-container {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .message-type-selection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-label,
+  .attachment-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 4px;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+  }
+
+  .attachment-input {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+/* 附件容器样式 - 横向排列 */
+.attachments-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  min-height: 60px;
+  background-color: #fff;
+//   align-items: center;
+}
+
+/* 附件标签样式 - 矩形包裹 */
+.attachment-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  border-radius: 4px;
+  padding: 0 6px;
+  margin: 2px 0;
+  font-size: 14px;
+  height: 21px;
+}
+
+/* 附件文件名样式 */
+.attachment-filename {
+  color: #1890ff;
+  margin-right: 4px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 删除按钮样式 - X号 */
+.remove-attachment-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+  border-radius: 50%;
+  transition: all 0.3s;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+//   &:hover {
+//     background-color: #ff4d4f;
+//     color: white;
+//   }
+}
+
+/* 无附件提示样式 */
+.no-attachments {
+  color: #999;
+//   font-style: italic;
+  font-size: 14px;
+}
+
+/* 确保附件按钮与容器对齐 */
+.attachment-btn {
+  width: 70px;
+  padding: 6px 8px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-right: 12px;
+  text-align: center;
+  min-width: auto;
+  height: fit-content;
+  margin-top: 6px;
+}
+
+/* 表单组布局 - 确保附件区域正确排列 */
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* 确保标签与按钮对齐 */
+.form-label,
+.attachment-btn {
+  margin-top: 6px;
+}
+
+/* 移除旧的附件输入框样式，避免冲突 */
+.form-textarea.attachment-input {
+  display: none;
+}
+
+.attachment-input {
+  display: none;
+}
